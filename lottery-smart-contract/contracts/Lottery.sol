@@ -1,8 +1,6 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.19;
 
-// import "truffle/Console.sol";
-
 contract Lottery {
     address public owner;
     address payable[] public players;
@@ -29,7 +27,7 @@ contract Lottery {
     function enter() public payable {
         require(msg.value >= 0.001 ether);
         players.push(payable(msg.sender));
-        // Console.log('Entered to lotteryId=${lotteryId}:', msg.sender);
+        // console.log('Entered to lotteryId=${lotteryId}:', msg.sender);
     }
 
     function getRandomNumber() public view returns (uint) {
