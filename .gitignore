@@ -1,0 +1,11 @@
+**/.env
+node_modules/
+build/
+
+# MacOS files
+**/.DS_Store
+**/.profraw
+
+# IDE
+.idea/
+.vscode/
