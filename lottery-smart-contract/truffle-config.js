@@ -3,7 +3,7 @@ const HDWalletProvider = require("@truffle/hdwallet-provider");
 
 const private_keys = [
   process.env.PRIVATE_KEY_1,
-  process.env.PRIVATE_KEY_2,
+  // process.env.PRIVATE_KEY_2,
 ]
 
 module.exports = {
@@ -18,8 +18,8 @@ module.exports = {
       provider: () => new HDWalletProvider(
         {
           privateKeys: private_keys,
-          providerOrUrl: 'https://goerli.infura.io/v3/9152d493a2b4451a9d05b2d5c04bc748',
-          numberOfAddress: 2
+          providerOrUrl: process.env.INFURA_GOERLI_RPC_URL,
+          numberOfAddress: 1
         },
       ),
       network_id: 5,
@@ -39,5 +39,9 @@ module.exports = {
         },
       }
     }
+  },
+  solidityLog: {
+    displayPrefix: ' :', // defaults to ""
+    preventConsoleLogMigration: true, // defaults to false
   }
 };

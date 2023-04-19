@@ -9,3 +9,5 @@ build/
 # IDE
 .idea/
 .vscode/
+
+**/package-lock.json

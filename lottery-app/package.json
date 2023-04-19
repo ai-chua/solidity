@@ -1,0 +1,22 @@
+{
+  "name": "lottery-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "NODE_ENV=development nodemon index.js",
+    "dev:goerli": "NODE_ENV=goerli nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@truffle/hdwallet-provider": "^2.1.9",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "ethers": "^6.3.0",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.22",
+    "web3": "^1.9.0"
+  }
+}
