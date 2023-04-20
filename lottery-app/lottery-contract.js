@@ -12,6 +12,8 @@ const goerliProvider = new Web3(
 const developmentProvider = new Web3("http://127.0.0.1:8545");
 
 module.exports = {
-    goerli: new goerliProvider.eth.Contract(SMART_CONTRACT_ABI.abi, '0x4094F2b62E227D9CE8F86F6933886683D347c098'),
-    dev: new developmentProvider.eth.Contract(SMART_CONTRACT_ABI.abi, process.env.DEV_CONTRACT_ADDRESS)
+    goerliContract: new goerliProvider.eth.Contract(SMART_CONTRACT_ABI.abi, '0x4094F2b62E227D9CE8F86F6933886683D347c098'),
+    goerliProvider,
+    devContract: new developmentProvider.eth.Contract(SMART_CONTRACT_ABI.abi, process.env.DEV_CONTRACT_ADDRESS),
+    devProvider: developmentProvider
 }
