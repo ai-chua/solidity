@@ -33,6 +33,15 @@ app.get(
     }
 )
 
+app.get(
+    '/winner',
+    async (req, res) => {
+        const { draw_id } = req.query;
+        const winner = await contract.methods.getPastResult(draw_id).call();
+        return res.status(200).send({ data: { draw_id, winner } })
+    }
+)
+
 app.post(
     '/enter',
     async (req, res) => {
@@ -46,10 +55,22 @@ app.post(
                 value: amt
             });
             console.log('tx', tx);
-            return res.status(201).send({data: { tx }})
+            return res.status(201).send({data: { tx}})
         } catch (error) {
             console.log('error', error)
             return res.status(500).send({error: { message: 'Failed to enter'}})
+        }
+    }
+)
+
+app.post(
+    '/draw',
+    async (req, res) => {
+        try {
+
+        } catch (error) {
+            console.log('error', error)
+            return res.status(500).send({error: { message: 'Failed to pick winner'}})
         }
     }
 )
